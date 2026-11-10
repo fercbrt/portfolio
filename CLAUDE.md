@@ -28,4 +28,4 @@ projects) in Angular 22 to strengthen my Angular skills.
 9. Quality and deployment: tests, SSR/prerendering, deploy
 
 ## Progress
-- Phase 0: Phase 0 done; understood the bootstrap chain.
+- Phase 0: done; understood the bootstrap chain.
