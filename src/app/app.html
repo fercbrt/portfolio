@@ -7,9 +7,17 @@
       </p>
     </app-section>
     <app-section heading="Experience">
-      <p>
-        This section will show where i worked, until then, this is a placeholder.
-      </p>
+      <ul>
+        @for (item of experiences; track item.id) {
+          <li class="my-4">
+            <app-experience-card [experience]="item" />
+          </li>
+        } @empty {
+          <li>
+            There is no experience.
+          </li>
+        }
+      </ul>
     </app-section>
     <router-outlet />
   </main>
