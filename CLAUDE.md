@@ -17,8 +17,8 @@ projects) in Angular 22 to strengthen my Angular skills.
 
 ## Roadmap
 0. Setup and workspace structure
-1. Layout: components, input() ← current phase
-2. Data: interfaces, services, inject()
+1. Layout: components, input()
+2. Data: interfaces, services, inject() ← current phase
 3. Lists: @for/@if, parent → child data
 4. State: signal, computed, effect
 5. Navigation: router, route params, lazy loading
@@ -29,3 +29,4 @@ projects) in Angular 22 to strengthen my Angular skills.
 
 ## Progress
 - Phase 0: done; understood the bootstrap chain.
+- Phase 1: done; learned about components, inputs and basic tailwind classes
