@@ -5,4 +5,8 @@
     <p>
         {{ role() }}
     </p>
+    <nav class="flex gap-4 mt-4">
+        <a class="text-gray-600 hover:text-gray-900 hover:underline underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm" routerLink="/" routerLinkActive="font-bold" ariaCurrentWhenActive="page" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a class="text-gray-600 hover:text-gray-900 hover:underline underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm"  routerLink="/experience" routerLinkActive="font-bold" ariaCurrentWhenActive="page">Experience</a>
+    </nav>
 </header>

@@ -1,35 +1,7 @@
 <div class="px-4 mx-auto max-w-4xl">
-  <app-header [name]="name()" [role]="role()" />
+  <app-header [name]="name" [role]="role" />
   <main>
-    <app-section heading="About Me">
-      <p>
-        I am a software engineer with a passion for creating innovative solutions and building user-friendly applications. Or that's what Copilot said in the VSCode suggestion before I disabled it.
-      </p>
-    </app-section>
-    <app-section heading="Experience">
-      <div class="flex flex-wrap gap-2 mb-6">
-        <button type="button" (click)="selectedTechnology.set(null)" class="rounded-full px-3 py-1 text-sm font-medium border border-gray-300 cursor-pointer not-aria-pressed:hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 aria-pressed:bg-gray-900 aria-pressed:text-white aria-pressed:border-gray-900 aria-pressed:hover:bg-gray-700" [aria-pressed]="selectedTechnology() === null">
-          All
-        </button>
-        @for (item of allTechnologies(); track $index) {
-          <button type="button" (click)="selectedTechnology.set(item)" class="rounded-full px-3 py-1 text-sm font-medium cursor-pointer border border-gray-300 not-aria-pressed:hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 aria-pressed:bg-gray-900 aria-pressed:text-white aria-pressed:border-gray-900 aria-pressed:hover:bg-gray-700" [aria-pressed]="selectedTechnology() === item">
-            {{ item }}
-          </button>
-        }
-      </div>
-      <ul>
-        @for (item of filteredExperiences(); track item.id) {
-          <li class="my-4">
-            <app-experience-card [experience]="item" />
-          </li>
-        } @empty {
-          <li>
-            There is no experience.
-          </li>
-        }
-      </ul>
-    </app-section>
     <router-outlet />
   </main>
-  <app-footer [ownerName]="name()" />  
+  <app-footer [ownerName]="name" />  
 </div>
