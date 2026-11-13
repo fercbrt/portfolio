@@ -8,11 +8,11 @@
     </app-section>
     <app-section heading="Experience">
       <div class="flex flex-wrap gap-2 mb-6">
-        <button (click)="selectedTechnology.set(null)" class="rounded-full px-3 py-1 text-sm font-medium border border-gray-300 cursor-pointer hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+        <button type="button" (click)="selectedTechnology.set(null)" class="rounded-full px-3 py-1 text-sm font-medium border border-gray-300 cursor-pointer not-aria-pressed:hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 aria-pressed:bg-gray-900 aria-pressed:text-white aria-pressed:border-gray-900 aria-pressed:hover:bg-gray-700" [aria-pressed]="selectedTechnology() === null">
           All
         </button>
         @for (item of allTechnologies(); track $index) {
-          <button (click)="selectedTechnology.set(item)" class="rounded-full px-3 py-1 text-sm font-medium cursor-pointer border border-gray-300 hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900" [class.bg-gray-900]="selectedTechnology() == item" [class.text-white]="selectedTechnology() == item" [class.border-gray-900]="selectedTechnology() == item">
+          <button type="button" (click)="selectedTechnology.set(item)" class="rounded-full px-3 py-1 text-sm font-medium cursor-pointer border border-gray-300 not-aria-pressed:hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 aria-pressed:bg-gray-900 aria-pressed:text-white aria-pressed:border-gray-900 aria-pressed:hover:bg-gray-700" [aria-pressed]="selectedTechnology() === item">
             {{ item }}
           </button>
         }

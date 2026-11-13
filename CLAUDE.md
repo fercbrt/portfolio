@@ -20,8 +20,8 @@ projects) in Angular 22 to strengthen my Angular skills.
 1. Layout: components, input()
 2. Data: interfaces, services, inject()
 3. Lists: @for/@if, parent → child data
-4. State: signal, computed, effect ← current phase
-5. Navigation: router, route params, lazy loading
+4. State: signal, computed, effect
+5. Navigation: router, route params, lazy loading ← current phase
 6. Contact form: validation
 7. External data: HttpClient, resource()/httpResource()
 8. Polish: theme, @defer, accessibility
@@ -32,3 +32,4 @@ projects) in Angular 22 to strengthen my Angular skills.
 - Phase 1: done; learned about components, inputs and basic tailwind classes.
 - Phase 2: done; created and injected the experience service.
 - Phase 3: done; implemented template's control directives in some components.
+- Phase 4: done; learned about effect(), signal() and computed() frameworks to implement it in the web application.
