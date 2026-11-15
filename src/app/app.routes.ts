@@ -20,6 +20,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/experience-detail-page/experience-detail-page').then(m => m.ExperienceDetailPage),
     },
     {
+        path: 'contact',
+        title: 'Contact | Portfolio',
+        loadComponent: () => import('./pages/contact-page/contact-page').then(m => m.ContactPage),
+    },
+    {
         path: '**',
         title: '404 | Portfolio',
         loadComponent: () => import('./pages/not-found-page/not-found-page').then(m => m.NotFoundPage),
