@@ -33,4 +33,4 @@ projects) in Angular 22 to strengthen my Angular skills.
 - Phase 2: done; created and injected the experience service.
 - Phase 3: done; implemented template's control directives in some components.
 - Phase 4: done; learned about effect(), signal() and computed() frameworks to implement it in the web application.
-- Phase 5: done; created pages, routing, guard and tests
+- Phase 5: done; created pages, routing, guards and tests
