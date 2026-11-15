@@ -1,14 +1,27 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './pages/home-page/home-page';
-import { ExperiencePage } from './pages/experience-page/experience-page';
+import { experienceExistsGuard } from './guards/experience-exists-guard';
 
 export const routes: Routes = [
     {
         path: '',
+        title: 'Home | Portfolio',
         component: HomePage
     },
     {
         path: 'experience',
-        component: ExperiencePage
+        title: 'Experience | Portfolio',
+        loadComponent:() => import('./pages/experience-page/experience-page').then(m => m.ExperiencePage),
+    },
+    {
+        path: 'experience/:id',
+        title: 'Experience detail | Portfolio',
+        canMatch: [experienceExistsGuard],
+        loadComponent: () => import('./pages/experience-detail-page/experience-detail-page').then(m => m.ExperienceDetailPage),
+    },
+    {
+        path: '**',
+        title: '404 | Portfolio',
+        loadComponent: () => import('./pages/not-found-page/not-found-page').then(m => m.NotFoundPage),
     }
 ];

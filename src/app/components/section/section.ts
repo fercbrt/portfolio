@@ -1,7 +1,8 @@
 import { Component, input } from '@angular/core';
+import { PageHeading } from '../page-heading/page-heading';
 
 @Component({
-  imports: [],
+  imports: [PageHeading],
   selector: 'app-section',
   styleUrl: './section.css',
   templateUrl: './section.html',

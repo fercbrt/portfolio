@@ -3,7 +3,7 @@ import { Section } from '../../components/section/section';
 import { ExperienceCard } from '../../components/experience-card/experience-card';
 import { ExperienceService } from '../../services/experience-service/experience-service';
 import { Title } from '@angular/platform-browser';
-import { ProfileService } from '../../services/profile-service/profile-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   imports: [Section, ExperienceCard],
@@ -13,11 +13,11 @@ import { ProfileService } from '../../services/profile-service/profile-service';
 })
 export class ExperiencePage {
   private readonly experienceService = inject(ExperienceService);
-  private readonly profileService = inject(ProfileService);
 
   private readonly title = inject(Title);
+  private readonly route = inject(ActivatedRoute);
 
-  protected readonly name = this.profileService.name;
+  private readonly routeTitle = this.route.snapshot.title ?? 'Portfolio';
 
   protected readonly experiences = signal(this.experienceService.getData());
   protected readonly allTechnologies = computed(() => [... new Set (this.experiences().flatMap(experience => experience.technologies))]);
@@ -38,10 +38,10 @@ export class ExperiencePage {
     effect(() => {
       const selectedTech = this.selectedTechnology();
       if (selectedTech === null){
-        this.title.setTitle(this.name + ' | Portfolio');
+        this.title.setTitle(this.routeTitle);
       }
       else {
-        this.title.setTitle(selectedTech + ' | ' + this.name)
+        this.title.setTitle(selectedTech + ' | ' + this.routeTitle);
       }
     });
   }

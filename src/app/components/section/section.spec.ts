@@ -11,6 +11,7 @@ describe('Section', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(Section);
+    fixture.componentRef.setInput('heading', 'Test heading');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -1,0 +1,13 @@
+@if (experience(); as exp) {
+    <app-section [heading]="exp.position + ' | ' + exp.company">
+        <p>
+        {{ exp.startDate | date: 'MMM y' }} – @if (exp.endDate) {
+        {{ exp.endDate | date: 'MMM y' }}
+        } @else {Present}
+        </p>
+        <p class="my-2">
+            {{ exp.description }}
+        </p>
+        <app-experience-chips [technologies]="exp.technologies" />
+    </app-section>
+}

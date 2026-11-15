@@ -37,4 +37,8 @@ export class ExperienceService {
     getData(): Experience[] {
         return [...this.experiences];
     }
+
+    getExperience(id: number): Experience | undefined {
+        return this.experiences.find(experience => experience.id === id);
+    }
 }
