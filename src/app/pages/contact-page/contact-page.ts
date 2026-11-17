@@ -2,9 +2,10 @@ import { Component, signal } from '@angular/core';
 import { Contact } from '../../models/contact';
 import { email, form, FormField, FormRoot, minLength, required } from '@angular/forms/signals';
 import { Section } from '../../components/section/section';
+import { FieldErrors } from '../../components/field-errors/field-errors';
 
 @Component({
-  imports: [FormField, Section, FormRoot],
+  imports: [FormField, Section, FormRoot, FieldErrors],
   selector: 'app-contact-page',
   styleUrl: './contact-page.css',
   templateUrl: './contact-page.html',

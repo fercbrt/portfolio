@@ -10,15 +10,7 @@
                 class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors aria-invalid:border-red-600 aria-invalid:focus:outline-red-600" 
                 [aria-invalid]="contactForm.name().touched() && contactForm.name().invalid()"
                 aria-describedby="name-errors" />
-            @if (contactForm.name().touched() && contactForm.name().invalid()) {
-                <ul id="name-errors" class="space-y-1 text-sm text-red-700">
-                    @for (error of contactForm.name().errors(); track error) {
-                        <li>
-                            {{ error.message }}
-                        </li>
-                    }
-                </ul>
-            }
+            <app-field-errors [field]="contactForm.name" errorsId="name-errors" />
         </div>
         <div class="space-y-2">
             <label for="email" class="block text-sm font-medium text-gray-700">
@@ -30,15 +22,7 @@
                 class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors aria-invalid:border-red-600 aria-invalid:focus:outline-red-600 "
                 [aria-invalid]="contactForm.email().touched() && contactForm.email().invalid()"
                 aria-describedby="email-errors" />
-            @if (contactForm.email().touched() && contactForm.email().invalid()) {
-                <ul id="email-errors" class="space-y-1 text-sm text-red-700">
-                    @for (error of contactForm.email().errors(); track error) {
-                        <li>
-                            {{ error.message }}
-                        </li>
-                    }
-                </ul>
-            }
+            <app-field-errors [field]="contactForm.email" errorsId="email-errors" />
         </div>
         <div class="space-y-2">
             <label for="message" class="block text-sm font-medium text-gray-700">
@@ -48,15 +32,7 @@
             class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors resize-y aria-invalid:border-red-600 aria-invalid:focus:outline-red-600"
             [aria-invalid]="contactForm.message().touched() && contactForm.message().invalid()"
             rows="5" aria-describedby="message-errors" ></textarea>
-            @if (contactForm.message().touched() && contactForm.message().invalid()) {
-                <ul id="message-errors" class="space-y-1 text-sm text-red-700">
-                    @for (error of contactForm.message().errors(); track error) {
-                        <li>
-                            {{ error.message }}
-                        </li>
-                    }
-                </ul>
-            }
+            <app-field-errors [field]="contactForm.message" errorsId="message-errors" />
         </div>
         <button type="submit"
             [disabled]="contactForm().submitting()"

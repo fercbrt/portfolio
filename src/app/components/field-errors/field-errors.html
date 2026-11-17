@@ -1,0 +1,9 @@
+@if (computedField().touched() && computedField().invalid()) {
+    <ul [id]="errorsId()" class="space-y-1 text-sm text-red-700">
+        @for (error of computedField().errors(); track error) {
+            <li>
+                {{ error.message }}
+            </li>
+        }
+    </ul>
+}
