@@ -41,7 +41,7 @@ export class ExperiencePage {
         this.title.setTitle(this.routeTitle);
       }
       else {
-        this.title.setTitle(selectedTech + ' | ' + this.routeTitle);
+        this.title.setTitle(`${selectedTech} | ${this.routeTitle}`);
       }
     });
   }

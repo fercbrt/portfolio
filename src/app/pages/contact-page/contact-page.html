@@ -1,19 +1,77 @@
 <app-section heading="Contact">
-    <form>
-        <label for="name">
-            Name
-        </label>
-        <input id="name" type="text" [formField]="contactForm.name" />
-        <label for="email">
-            Email
-        </label>
-        <input id="email" type="email" [formField]="contactForm.email" />
-        <label for="message">
-            Message
-        </label>
-        <textarea id="message" [formField]="contactForm.message"></textarea>
+    <form [formRoot]="contactForm" class="space-y-5 max-w-xl" >
+        <div class="space-y-2">
+            <label for="name" class="block text-sm font-medium text-gray-700">
+                Name
+            </label>
+            <input id="name" type="text"
+                autocomplete="name"
+                [formField]="contactForm.name"
+                class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors aria-invalid:border-red-600 aria-invalid:focus:outline-red-600" 
+                [aria-invalid]="contactForm.name().touched() && contactForm.name().invalid()"
+                aria-describedby="name-errors" />
+            @if (contactForm.name().touched() && contactForm.name().invalid()) {
+                <ul id="name-errors" class="space-y-1 text-sm text-red-700">
+                    @for (error of contactForm.name().errors(); track error) {
+                        <li>
+                            {{ error.message }}
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        <div class="space-y-2">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+                Email
+            </label>
+            <input id="email" type="email" 
+                autocomplete="email"
+                [formField]="contactForm.email" 
+                class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors aria-invalid:border-red-600 aria-invalid:focus:outline-red-600 "
+                [aria-invalid]="contactForm.email().touched() && contactForm.email().invalid()"
+                aria-describedby="email-errors" />
+            @if (contactForm.email().touched() && contactForm.email().invalid()) {
+                <ul id="email-errors" class="space-y-1 text-sm text-red-700">
+                    @for (error of contactForm.email().errors(); track error) {
+                        <li>
+                            {{ error.message }}
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        <div class="space-y-2">
+            <label for="message" class="block text-sm font-medium text-gray-700">
+                Message
+            </label>
+            <textarea id="message" [formField]="contactForm.message"
+            class="block w-full border border-gray-300 rounded-md px-3 py-2 bg-white text-gray-900 focus:outline-2 focus:outline-offset-0 focus:outline-gray-900 transition-colors resize-y aria-invalid:border-red-600 aria-invalid:focus:outline-red-600"
+            [aria-invalid]="contactForm.message().touched() && contactForm.message().invalid()"
+            rows="5" aria-describedby="message-errors" ></textarea>
+            @if (contactForm.message().touched() && contactForm.message().invalid()) {
+                <ul id="message-errors" class="space-y-1 text-sm text-red-700">
+                    @for (error of contactForm.message().errors(); track error) {
+                        <li>
+                            {{ error.message }}
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        <button type="submit"
+            [disabled]="contactForm().submitting()"
+            class="rounded-md px-3 py-2 text-sm font-medium border cursor-pointer transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 
+                bg-gray-900 text-white border-gray-900 enabled:hover:bg-gray-100 enabled:hover:text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed">
+            @if (contactForm().submitting()) {
+                Sending...
+            } @else {
+                Submit
+            }
+        </button>
+        <p role="status" class="text-sm text-green-700 mt-2">
+            @if (submitted()) {
+                Thanks! Your message has been sent.
+            }
+        </p>
     </form>
-    <p>
-        {{ contactForm().value() | json }}
-    </p>
 </app-section>

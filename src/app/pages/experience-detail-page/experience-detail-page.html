@@ -1,9 +1,17 @@
+<div class="text-sm mb-4">
+    <a routerLink="/experience" class="inline-flex items-center gap-1 group text-blue-700 hover:text-blue-900 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm transition-colors">
+        <app-arrow-left-circle-icon class="motion-safe:group-hover:-translate-x-0.5 motion-safe:transition-transform"/>
+        <span>
+            Back to experience
+        </span>
+    </a>
+</div>
 @if (experience(); as exp) {
-    <app-section [heading]="exp.position + ' | ' + exp.company">
+    <app-section heading="{{ exp.position }} | {{ exp.company }}">
         <p>
-        {{ exp.startDate | date: 'MMM y' }} – @if (exp.endDate) {
-        {{ exp.endDate | date: 'MMM y' }}
-        } @else {Present}
+            {{ exp.startDate | date: 'MMM y' }} – @if (exp.endDate) {
+            {{ exp.endDate | date: 'MMM y' }}
+            } @else {Present}
         </p>
         <p class="my-2">
             {{ exp.description }}

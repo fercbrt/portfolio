@@ -3,9 +3,11 @@ import { ExperienceService } from '../../services/experience-service/experience-
 import { DatePipe } from '@angular/common';
 import { ExperienceChips } from '../../components/experience-chips/experience-chips';
 import { Section } from '../../components/section/section';
+import { RouterLink } from '@angular/router';
+import { ArrowLeftCircleIcon } from '../../components/arrow-left-circle-icon/arrow-left-circle-icon';
 
 @Component({
-  imports: [DatePipe, ExperienceChips, Section],
+  imports: [DatePipe, ExperienceChips, Section, RouterLink, ArrowLeftCircleIcon],
   selector: 'app-experience-detail-page',
   styleUrl: './experience-detail-page.css',
   templateUrl: './experience-detail-page.html',

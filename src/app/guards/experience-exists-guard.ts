@@ -1,4 +1,4 @@
-import { inject, input, numberAttribute } from '@angular/core';
+import { inject, numberAttribute } from '@angular/core';
 import { CanMatchFn } from '@angular/router';
 import { ExperienceService } from '../services/experience-service/experience-service';
 
