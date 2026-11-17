@@ -22,7 +22,7 @@ projects) in Angular 22 to strengthen my Angular skills.
 3. Lists: @for/@if, parent → child data
 4. State: signal, computed, effect
 5. Navigation: router, route params, lazy loading
-6. Contact form: validation ← current phase
+6. Contact form: validation
 7. External data: HttpClient, resource()/httpResource() ← current phase
 8. Polish: theme, @defer, accessibility
 9. Quality and deployment: tests, SSR/prerendering, deploy

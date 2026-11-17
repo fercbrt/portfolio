@@ -13,13 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExperiencePage {
   private readonly experienceService = inject(ExperienceService);
+  private readonly experiences = this.experienceService.experiences;
 
   private readonly title = inject(Title);
   private readonly route = inject(ActivatedRoute);
 
   private readonly routeTitle = this.route.snapshot.title ?? 'Portfolio';
 
-  protected readonly experiences = signal(this.experienceService.getData());
   protected readonly allTechnologies = computed(() => [... new Set (this.experiences().flatMap(experience => experience.technologies))]);
   protected readonly selectedTechnology = signal<string | null>(null);
   protected readonly filteredExperiences = computed(
@@ -33,6 +33,7 @@ export class ExperiencePage {
       }
     }
   );
+  protected readonly experienceResource = this.experienceService.experienceResource
 
   constructor() {
     effect(() => {
