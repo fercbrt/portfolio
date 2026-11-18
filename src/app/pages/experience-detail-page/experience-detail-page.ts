@@ -14,10 +14,12 @@ import { ArrowLeftCircleIcon } from '../../components/arrow-left-circle-icon/arr
 })
 export class ExperienceDetailPage {
   private readonly experienceService = inject(ExperienceService);
+  
 
   readonly id = input.required({ transform: numberAttribute });
 
   protected readonly experience = computed(
     () => this.experienceService.getExperience(this.id())
   );
+  protected readonly experienceResource = this.experienceService.experienceResource;
 }

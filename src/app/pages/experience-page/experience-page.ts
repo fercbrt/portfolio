@@ -33,7 +33,7 @@ export class ExperiencePage {
       }
     }
   );
-  protected readonly experienceResource = this.experienceService.experienceResource
+  protected readonly experienceResource = this.experienceService.experienceResource;
 
   constructor() {
     effect(() => {
