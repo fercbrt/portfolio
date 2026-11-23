@@ -3,9 +3,10 @@ import { Section } from '../../components/section/section';
 import { ProjectService } from '../../services/project-service/project-service';
 import { ProjectSort } from '../../models/project';
 import { ToggleChip } from '../../directives/toggle-chip';
+import { ProjectCard } from '../../components/project-card/project-card';
 
 @Component({
-  imports: [Section, ToggleChip],
+  imports: [Section, ToggleChip, ProjectCard],
   selector: 'app-projects-page',
   templateUrl: './projects-page.html',
 })

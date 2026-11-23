@@ -1,13 +1,12 @@
 import { Component, computed, inject, input, numberAttribute } from '@angular/core';
 import { ExperienceService } from '../../services/experience-service/experience-service';
 import { DatePipe } from '@angular/common';
-import { ExperienceChips } from '../../components/experience-chips/experience-chips';
 import { Section } from '../../components/section/section';
 import { RouterLink } from '@angular/router';
 import { ArrowLeftCircleIcon } from '../../components/arrow-left-circle-icon/arrow-left-circle-icon';
-
+import { TagList } from '../../components/tag-list/tag-list';
 @Component({
-  imports: [DatePipe, ExperienceChips, Section, RouterLink, ArrowLeftCircleIcon],
+  imports: [DatePipe, Section, RouterLink, ArrowLeftCircleIcon, TagList],
   selector: 'app-experience-detail-page',
   styleUrl: './experience-detail-page.css',
   templateUrl: './experience-detail-page.html',

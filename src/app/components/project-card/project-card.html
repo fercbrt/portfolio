@@ -1,0 +1,33 @@
+<h3 class="font-bold my-2">
+    <a [href]="project().html_url" target="_blank" rel="noopener noreferrer"
+        class="text-blue-700 hover:text-blue-900 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm transition-colors">
+        {{project().name}}
+    </a>
+</h3>
+@if (project().description) {
+    <p class="text-sm text-gray-600">
+        {{project().description}}
+    </p>
+}
+@if (project().homepage) {
+    <p class="text-sm">
+        <a [href]="project().homepage" target="_blank" rel="noopener noreferrer"
+            class="text-blue-700 hover:text-blue-900 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm transition-colors">
+            Live demo<span class="sr-only"> of {{project().name}}</span>
+        </a>
+    </p>
+}
+<div class="flex flex-wrap gap-x-4 text-xs text-gray-500 mt-2">
+    @if (project().language) {
+        <span>Language: {{ project().language }}</span>
+    }
+    @if (project().stargazers_count > 0) {
+        <span>
+            <span aria-hidden="true">★</span> {{ project().stargazers_count }}<span class="sr-only"> {{ project().stargazers_count === 1 ? 'star' : 'stars' }}</span>
+        </span>
+    }
+    <time [attr.datetime]="project().updated_at">Updated {{ project().updated_at | date: 'MMM y' }}</time>
+</div>
+@if (project().topics.length > 0) {
+    <app-tag-list class="mt-2" [tags]="project().topics" />
+}

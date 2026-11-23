@@ -12,10 +12,7 @@
         <ul>
             @for (project of projects(); track project.id) {
                 <li class="my-4">
-                    <a [href]="project.html_url" target="_blank" rel="noopener noreferrer"
-                        class="text-blue-700 hover:text-blue-900 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm transition-colors">
-                        {{project.name}}
-                    </a>
+                    <app-project-card [project]="project" />
                 </li>
             } @empty {
                 <li>

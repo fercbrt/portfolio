@@ -16,7 +16,7 @@
         <p class="my-2">
             {{ exp.description }}
         </p>
-        <app-experience-chips [technologies]="exp.technologies" />
+        <app-tag-list [tags]="exp.technologies" />
     </app-section>
 } @else if (experienceResource.error()) {
     <app-section heading="Experience unavailable">
