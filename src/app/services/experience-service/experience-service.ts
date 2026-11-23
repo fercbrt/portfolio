@@ -28,4 +28,8 @@ export class ExperienceService {
             )
         );
     }
+
+    reload(): void {
+        this._experienceResource.reload();
+    }
 }

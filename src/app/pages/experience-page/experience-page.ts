@@ -5,9 +5,10 @@ import { ExperienceService } from '../../services/experience-service/experience-
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ToggleChip } from '../../directives/toggle-chip';
+import { ErrorMessage } from '../../components/error-message/error-message';
 
 @Component({
-  imports: [Section, ExperienceCard, ToggleChip],
+  imports: [Section, ExperienceCard, ToggleChip, ErrorMessage],
   selector: 'app-experience-page',
   styleUrl: './experience-page.css',
   templateUrl: './experience-page.html',
@@ -46,5 +47,9 @@ export class ExperiencePage {
         this.title.setTitle(`${selectedTech} | ${this.routeTitle}`);
       }
     });
+  }
+
+  protected reload(): void {
+    this.experienceService.reload();
   }
 }

@@ -23,6 +23,6 @@
     } @else if (projectResource.isLoading()) {
         <p role="status" class="text-gray-500 text-sm">Loading projects...</p>
     } @else {
-        <p role="alert" class="text-sm text-red-700">Could not load projects. Please try again later.</p>
+        <app-error-message (retry)="reload()" message="Could not load projects."/>
     }
 </app-section>

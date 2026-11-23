@@ -4,9 +4,10 @@ import { ProjectService } from '../../services/project-service/project-service';
 import { ProjectSort } from '../../models/project';
 import { ToggleChip } from '../../directives/toggle-chip';
 import { ProjectCard } from '../../components/project-card/project-card';
+import { ErrorMessage } from '../../components/error-message/error-message';
 
 @Component({
-  imports: [Section, ToggleChip, ProjectCard],
+  imports: [Section, ToggleChip, ProjectCard, ErrorMessage],
   selector: 'app-projects-page',
   templateUrl: './projects-page.html',
 })
@@ -26,5 +27,9 @@ export class ProjectsPage {
 
   protected setSort(sort: ProjectSort): void {
     this.projectService.setSort(sort);
+  }
+
+  protected reload(): void {
+    this.projectService.reload();
   }
 }

@@ -27,4 +27,8 @@ export class ProjectService {
     setSort(sort: ProjectSort): void {
         this._sort.set(sort);
     }
+
+    reload(): void {
+        this._projectResource.reload();
+    }
 }

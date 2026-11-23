@@ -5,8 +5,9 @@ import { Section } from '../../components/section/section';
 import { RouterLink } from '@angular/router';
 import { ArrowLeftCircleIcon } from '../../components/arrow-left-circle-icon/arrow-left-circle-icon';
 import { TagList } from '../../components/tag-list/tag-list';
+import { ErrorMessage } from '../../components/error-message/error-message';
 @Component({
-  imports: [DatePipe, Section, RouterLink, ArrowLeftCircleIcon, TagList],
+  imports: [DatePipe, Section, RouterLink, ArrowLeftCircleIcon, TagList, ErrorMessage],
   selector: 'app-experience-detail-page',
   styleUrl: './experience-detail-page.css',
   templateUrl: './experience-detail-page.html',
@@ -21,4 +22,8 @@ export class ExperienceDetailPage {
     () => this.experienceService.getExperience(this.id())
   );
   protected readonly experienceResource = this.experienceService.experienceResource;
+
+  protected reload(): void {
+    this.experienceService.reload();
+  }
 }
