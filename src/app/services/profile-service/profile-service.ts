@@ -4,4 +4,5 @@ import { Service } from '@angular/core';
 export class ProfileService {
     public readonly name: string = 'Fernando Calvino Balonero';
     public readonly role: string = 'Software Engineer';
+    public readonly githubUsername: string = 'fercbrt';
 }

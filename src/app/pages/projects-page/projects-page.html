@@ -1,0 +1,31 @@
+<app-section heading="Projects">
+    @if (projectResource.hasValue()) {
+        <div class="flex flex-wrap gap-2 mb-6" role="group" aria-labelledby="sort-label">
+            <span class="self-center text-sm text-gray-500" id="sort-label">Sort by:</span>
+            @for (option of sortOptions; track option.value) {
+                <button appToggleChip type="button" (click)="setSort(option.value)"
+                    [pressed]="sort() === option.value">
+                    {{ option.label }}
+                </button>
+            }
+        </div>
+        <ul>
+            @for (project of projects(); track project.id) {
+                <li class="my-4">
+                    <a [href]="project.html_url" target="_blank" rel="noopener noreferrer"
+                        class="text-blue-700 hover:text-blue-900 focus-visible:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 rounded-sm transition-colors">
+                        {{project.name}}
+                    </a>
+                </li>
+            } @empty {
+                <li>
+                    There are no projects yet.
+                </li>
+            }
+        </ul>
+    } @else if (projectResource.isLoading()) {
+        <p role="status" class="text-gray-500 text-sm">Loading projects...</p>
+    } @else {
+        <p role="alert" class="text-sm text-red-700">Could not load projects. Please try again later.</p>
+    }
+</app-section>

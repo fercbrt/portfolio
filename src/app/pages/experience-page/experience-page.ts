@@ -4,9 +4,10 @@ import { ExperienceCard } from '../../components/experience-card/experience-card
 import { ExperienceService } from '../../services/experience-service/experience-service';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { ToggleChip } from '../../directives/toggle-chip';
 
 @Component({
-  imports: [Section, ExperienceCard],
+  imports: [Section, ExperienceCard, ToggleChip],
   selector: 'app-experience-page',
   styleUrl: './experience-page.css',
   templateUrl: './experience-page.html',

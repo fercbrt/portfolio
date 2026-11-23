@@ -7,12 +7,15 @@ import { filter, firstValueFrom } from 'rxjs';
 @Service()
 export class ExperienceService {
 
-    private readonly _experienceResource = httpResource<Experience[]>(() => '/data/experiences.json');
+    private readonly _experienceResource = httpResource<Experience[]>(() => ({ url: '/data/experiences.json' }));
     private readonly _resourceStatus$ = toObservable(this._experienceResource.status);
 
     public readonly experienceResource = this._experienceResource.asReadonly();
 
-    public readonly experiences = computed(() => this._experienceResource.hasValue() ? this._experienceResource.value() : []);
+    public readonly experiences = computed(() =>
+        this._experienceResource.hasValue()
+            ? this._experienceResource.value()
+            : []);
 
     getExperience(id: number): Experience | undefined {
         return this.experiences().find(experience => experience.id === id);
