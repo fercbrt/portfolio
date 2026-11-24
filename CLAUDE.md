@@ -23,8 +23,8 @@ projects) in Angular 22 to strengthen my Angular skills.
 4. State: signal, computed, effect
 5. Navigation: router, route params, lazy loading
 6. Contact form: validation
-7. External data: HttpClient, resource()/httpResource() ← current phase
-8. Polish: theme, @defer, accessibility
+7. External data: HttpClient, resource()/httpResource()
+8. Polish: theme, @defer, accessibility ← current phase
 9. Quality and deployment: tests, SSR/prerendering, deploy
 
 ## Progress
@@ -35,3 +35,4 @@ projects) in Angular 22 to strengthen my Angular skills.
 - Phase 4: done; learned about effect(), signal() and computed() frameworks to implement it in the web application.
 - Phase 5: done; created pages, routing, guards and tests
 - Phase 6: done; created contact page with the new signal form feature by Angular v22
+- Phase 7: done; learned about HttpClient and resource() to fetch data from an external API.
