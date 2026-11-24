@@ -26,6 +26,6 @@
     } @else if (experienceResource.isLoading()) {
         <p role="status" class="text-gray-500 text-sm">Loading experience...</p>
     } @else {
-        <app-error-message (retry)="reload()" message="Could not load experience."/>
+        <app-error-message (retry)="reload()" [retryable]="true" message="Could not load experience."/>
     }
 </app-section>

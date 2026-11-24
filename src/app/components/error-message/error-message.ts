@@ -11,5 +11,7 @@ import { Component, input, output } from '@angular/core';
 })
 export class ErrorMessage {
   public readonly message = input.required<string>();
+  public readonly retryable = input<boolean>(false);
+
   public readonly retry = output<void>();
 }

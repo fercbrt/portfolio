@@ -20,6 +20,6 @@
     </app-section>
 } @else if (experienceResource.error()) {
     <app-section heading="Experience unavailable">
-        <app-error-message (retry)="reload()" message="Could not load experience."/>
+        <app-error-message (retry)="reload()" [retryable]="true" message="Could not load experience."/>
     </app-section>
 }
